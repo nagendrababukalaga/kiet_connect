@@ -1,0 +1,89 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": ["hi", "hello", "hey", "good morning", "good afternoon"],
+      "responses": ["Hello! Welcome to KIET Group of Institutions. How can I help you today?"]
+    },
+    {
+      "tag": "courses_offered",
+      "patterns": ["what programs do you offer", "what courses are available", "which programs do you have", "available courses at KIET"],
+      "responses": ["KIET offers B.Tech & M.Tech programs in AI, Data Science, Cyber Security, Computer Science, ECE, EEE, Mechanical, Civil, and also MCA, MBA, and Diploma courses."]
+    },
+    {
+      "tag": "admissions_process",
+      "patterns": ["how to apply for admission", "admission process", "how can i join KIET", "what is the application process", "how to get admission"],
+      "responses": ["You can apply online through the 'Apply Now' section on our website or visit the Admissions Office at KIET campus. Applications for the upcoming academic year are now open."]
+    },
+    {
+      "tag": "founder_chairman",
+      "patterns": ["who is the chairman of KIET", "founder of KIET", "who founded KIET Group of Institutions"],
+      "responses": ["Mr. Viswam Srimahavishnu is the Chairman and Founder of KIET Group of Institutions."]
+    },
+    {
+      "tag": "principal",
+      "patterns": ["who is the principal of KIET", "principal name", "principal of KIET college"],
+      "responses": ["Dr. M. Chandrasekhar is the Principal of KIET Group of Institutions."]
+    },
+    {
+      "tag": "establishment_year",
+      "patterns": ["when was KIET founded", "in which year KIET started", "when was KIET Group established"],
+      "responses": ["KIET Group of Institutions was established in 2001 to provide quality education and industry-oriented training."]
+    },
+    {
+      "tag": "placement_statistics",
+      "patterns": ["placement details", "placement record", "how good are placements", "companies visiting KIET"],
+      "responses": ["KIET has an excellent placement record with over 95% placement rate. More than 150 companies visit the campus every year, offering packages up to 45 LPA and an average of 8.5 LPA."]
+    },
+    {
+      "tag": "campus_facilities",
+      "patterns": ["campus facilities", "what facilities does KIET have", "about campus life", "infrastructure at KIET"],
+      "responses": ["KIET campus includes smart classrooms, advanced computer labs, libraries, innovation centers, sports complex, and hostel facilities for both boys and girls."]
+    },
+    {
+      "tag": "laboratory_facilities",
+      "patterns": ["what labs does KIET have", "smart labs KIET", "laboratories KIET", "lab facilities"],
+      "responses": ["KIET has state-of-the-art Smart Labs such as Smart City Lab, Robotics Lab, Computer Vision Lab, and many others that provide hands-on learning."]
+    },
+    {
+      "tag": "hostel_facility",
+      "patterns": ["does KIET have hostel", "hostel facilities", "accommodation at KIET", "staying options"],
+      "responses": ["Yes, KIET offers separate hostel facilities for boys and girls with Wi-Fi, mess, and 24/7 security."]
+    },
+    {
+      "tag": "scholarships",
+      "patterns": ["scholarships at KIET", "does KIET offer scholarships", "financial aid", "fee concession"],
+      "responses": ["Yes, KIET provides various scholarships and financial assistance based on merit and need. You can check the Scholarship section on the official website for details."]
+    },
+    {
+      "tag": "events",
+      "patterns": ["college events", "fests at KIET", "annual day", "technical fest", "cultural fest"],
+      "responses": ["KIET organizes several events like TechnoFest, annual day celebrations, workshops, seminars, and cultural programs every year to encourage students’ participation."]
+    },
+    {
+      "tag": "contact_info",
+      "patterns": ["phone number", "email address", "how to contact KIET", "contact details"],
+      "responses": ["You can contact us at +91 9849495335 or email admissions@kietgroup.com for admission queries."]
+    },
+    {
+      "tag": "location",
+      "patterns": ["where is KIET located", "college address", "how to reach KIET", "KIET location"],
+      "responses": ["KIET Group of Institutions is located at Korangi Road, Yanam, Kakinada District, Andhra Pradesh – 533461."]
+    },
+    {
+      "tag": "vision_mission",
+      "patterns": ["what is KIET vision", "mission of KIET", "goals of KIET college"],
+      "responses": ["The vision of KIET is to be a center of excellence in education and innovation. The mission is to develop technically competent and socially responsible professionals."]
+    },
+    {
+      "tag": "thanks",
+      "patterns": ["thank you", "thanks", "thanks a lot"],
+      "responses": ["You're welcome! 😊"]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": ["bye", "goodbye", "see you", "exit"],
+      "responses": ["Goodbye! Have a great day! 👋"]
+    }
+  ]
+}

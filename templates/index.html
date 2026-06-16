@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KIET Chatbot</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="chat-container">
+    <!-- Header with only Dark Mode toggle -->
+    <div class="chat-header">
+        KIET Chatbot 🤖
+        <button id="toggle-theme">🌙</button>
+    </div>
+
+    <!-- Chat messages -->
+    <div class="chat-box" id="chat-box">
+        <div class="bot-msg msg-bubble">
+            <span class="icon">🤖</span>
+            <span class="text">Hello! Ask me anything about KIET Group of Institutions.</span>
+        </div>
+    </div>
+
+    <!-- Input area with Send + Clear buttons -->
+    <div class="chat-input">
+        <input type="text" id="user-input" placeholder="Type your question..." onkeypress="if(event.keyCode==13){sendMessage()}">
+        <button onclick="sendMessage()">Send</button>
+        <button id="clear-chat">🧹 Clear</button>
+    </div>
+</div>
+
+<script>
+const chatBox = document.getElementById("chat-box");
+const themeBtn = document.getElementById("toggle-theme");
+const clearBtn = document.getElementById("clear-chat");
+let darkMode = false;
+
+// Smooth scroll
+function smoothScroll() {
+    chatBox.scrollTop = chatBox.scrollHeight;
+}
+
+// Bot message animation
+function typeBotMessage(message) {
+    let botMsg = document.createElement("div");
+    botMsg.className = "bot-msg msg-bubble";
+
+    let iconSpan = document.createElement("span");
+    iconSpan.className = "icon";
+    iconSpan.textContent = "🤖";
+
+    let textSpan = document.createElement("span");
+    textSpan.className = "text";
+
+    botMsg.appendChild(iconSpan);
+    botMsg.appendChild(textSpan);
+    chatBox.appendChild(botMsg);
+
+    let i = 0;
+    let interval = setInterval(() => {
+        textSpan.textContent += message.charAt(i);
+        i++;
+        smoothScroll();
+        if(i >= message.length) clearInterval(interval);
+    }, 25);
+}
+
+// Send message
+function sendMessage() {
+    const inputBox = document.getElementById("user-input");
+    const message = inputBox.value.trim();
+    if(message === "") return;
+
+    // User bubble
+    const userMsg = document.createElement("div");
+    userMsg.className = "user-msg msg-bubble";
+    const iconSpan = document.createElement("span");
+    iconSpan.className = "icon";
+    iconSpan.textContent = "👤";
+    const textSpan = document.createElement("span");
+    textSpan.className = "text";
+    textSpan.textContent = message;
+
+    userMsg.appendChild(iconSpan);
+    userMsg.appendChild(textSpan);
+    chatBox.appendChild(userMsg);
+    smoothScroll();
+
+    inputBox.value = "";
+
+    // Fetch bot response
+    fetch("/get_response", {
+        method: "POST",
+        body: new URLSearchParams({ msg: message }),
+        headers: { "Content-Type": "application/x-www-form-urlencoded" }
+    })
+    .then(response => response.json())
+    .then(data => {
+        typeBotMessage(data.response);
+    });
+}
+
+// Dark Mode toggle
+themeBtn.addEventListener("click", () => {
+    darkMode = !darkMode;
+    document.body.classList.toggle("dark-mode", darkMode);
+    themeBtn.textContent = darkMode ? "☀" : "🌙";
+});
+
+// Clear chat button
+clearBtn.addEventListener("click", () => {
+    chatBox.innerHTML = "";
+});
+</script>
+</body>
+</html>
