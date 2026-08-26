@@ -5,8 +5,10 @@ import nltk
 from nltk.stem import WordNetLemmatizer
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.naive_bayes import MultinomialNB
+from nltk.stem import WordNetLemmatizer
 
 nltk.download('punkt')
+nltk.download('punkt_tab')
 nltk.download('wordnet')
 
 lemmatizer = WordNetLemmatizer()
